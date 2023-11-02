@@ -68,7 +68,7 @@ class TestVarasto(unittest.TestCase):
 
         self.varasto.ota_varastosta(-1)
 
-        self.assertAlmostEqual(self.varasto.paljonko_mahtuu(), 999)
+        self.assertAlmostEqual(self.varasto.paljonko_mahtuu(), vanha_saldo)
 
     def test_ylisuuri_poisto(self):
         self.varasto.ota_varastosta(999)
