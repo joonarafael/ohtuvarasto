@@ -1,6 +1,10 @@
+# tmp files
 *.tmp
 
+# pytests
 **/__pycache__
 **/.pytest_cache
+
+# coverage reports
 *.coverage
 ../htmlcov
