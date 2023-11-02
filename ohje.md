@@ -1,1 +1,0 @@
-vakavaa asiaa eksje

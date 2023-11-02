@@ -1,2 +1,0 @@
-ja taas turhaa
-säätämist
