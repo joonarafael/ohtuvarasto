@@ -1,7 +1,11 @@
+"""This is the index file (entrypoint) for the program.
+"""
+
 from varasto import Varasto
 
-
 def main():
+    """Main program.
+    """
     mehua = Varasto(100.0)
     olutta = Varasto(100.0, 20.2)
 

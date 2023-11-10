@@ -1,26 +1,44 @@
+"""This is the Varasto class.
+"""
+
 class Varasto:
-    def __init__(self, tilavuus, alku_saldo = 0):
+    """Class object to handle a Varasto.
+    """
+    def __init__(self, tilavuus: float or int, alku_saldo = 0):
+        """Initialize the Varasto object.
+
+        Args:
+            tilavuus: Desired maximum capacity.
+            alku_saldo (int, optional): Starting volume as an int. Defaults to 0.
+        """
         if tilavuus > 0.0:
             self.tilavuus = tilavuus
         else:
-            # virheellinen, nollataan
             self.tilavuus = 0.0
 
         if alku_saldo < 0.0:
-            # virheellinen, nollataan
             self.saldo = 0.0
+
         elif alku_saldo <= tilavuus:
-            # mahtuu
             self.saldo = alku_saldo
+
         else:
-            # täyteen ja ylimäärä hukkaan!
             self.saldo = tilavuus
 
-    # huom: ominaisuus voidaan myös laskea. Ei tarvita erillistä kenttää viela_tilaa tms.
     def paljonko_mahtuu(self):
+        """Return the available capacity.
+
+        Returns:
+            float: Available capacity as a float.
+        """
         return self.tilavuus - self.saldo
 
-    def lisaa_varastoon(self, maara):
+    def lisaa_varastoon(self, maara: float or int):
+        """Method to add volume to the Varasto object.
+
+        Args:
+            maara: Amount to be added.
+        """
         if maara < 0:
             return
         if maara <= self.paljonko_mahtuu():
@@ -28,7 +46,15 @@ class Varasto:
         else:
             self.saldo = self.tilavuus
 
-    def ota_varastosta(self, maara):
+    def ota_varastosta(self, maara: float or int):
+        """Method to take balance out of from the Varasto.
+
+        Args:
+            maara: Requested amount to be taken out.
+
+        Returns:
+            float: Actual amount that was taken from the Varasto.
+        """
         if maara < 0:
             return 0.0
         if maara > self.saldo:
