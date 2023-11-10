@@ -83,8 +83,6 @@ class TestVarasto(unittest.TestCase):
         self.assertAlmostEqual(self.varasto.tilavuus, self.varasto.saldo)
 
     def test_virheellisen_maaran_poisto(self):
-        """Illegal argument for substraction.
-        """
         vanha_saldo = self.varasto.paljonko_mahtuu()
 
         self.varasto.ota_varastosta(-1)
